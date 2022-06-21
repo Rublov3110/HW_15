@@ -16,12 +16,18 @@ namespace HW_15
 
         public async void ReadHelloAsync()
         {
-            Hello = await File.ReadAllTextAsync(_helloFile);
+            await Task.Run(async () =>
+            {
+                Hello = await File.ReadAllTextAsync(_helloFile);
+            });
         }
 
         public async void ReadWorldAsync()
         {
-            World = await File.ReadAllTextAsync(_worldFile);
+            await Task.Run(async () =>
+            {
+                World = await File.ReadAllTextAsync(_worldFile);
+            });
         }
 
         public async void Display()
